@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <link rel="stylesheet" href="C:\\Users\\rahul\\OneDrive\\Desktop\\jail proj\\static\\style.css">
+</head>
+<body>
+    <h1>Database Results</h1>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <div class="person-details">
+            {% for row in rows %}
+                <div class="detail-container">
+                    <h2>Details for Unique ID: {{ row[0] }}</h2>
+                    <div class="details">
+                        {% for i in range(headers|length) %}
+                            <div class="detail">
+                                <strong>{{ headers[i] }}:</strong> {{ row[i] }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>

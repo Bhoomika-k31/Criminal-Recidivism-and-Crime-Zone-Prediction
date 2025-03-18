@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Department</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="header">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1>POLICE DEPARTMENT</h1>
+            </div>
+            <p>FOR AUTHORITY USE ONLY</p>
+            <div class="icon-container">
+                <div class="actions">
+                    <div class="action"> 
+                        <img src="track-png.png" alt="Track Icon">
+                        <p>Track</p>
+                    </div>
+                    <div class="action">
+                        <img src="monitor-icon.png" alt="Monitor Icon">
+                        <p>Monitor</p>
+                    </div>
+                    <div class="action">
+                        <img src="call-icon.png" alt="Call Icon">
+                        <p>Call</p>
+                    </div>
+                    <div class="action" id="report-icon">
+                        <img src="report.png" alt="Report Icon">
+                        <p>View Database</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="database-modal" class="hidden">
+        <div class="modal-content">
+            <h2 id="database-heading">Database</h2>
+            
+            <!-- Add the search bar inside modal -->
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" id="search-id" name="search-id" placeholder="Enter Unique ID" required>
+                    <button type="submit" id="search-button">Search</button>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table id="database-table">
+                    <!-- Dynamic table content will be displayed here -->
+                </table>
+            </div>
+            <button id="back-button">Back to Home Page</button>
+        </div>
+    </div>
+
+    <script src="C:\\Users\\rahul\\OneDrive\\Desktop\\jail proj\\static\\script.js"></script> 
+</body>
+</html>
